@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5288489-3F0C-4351-A253-C8D3799E6A71}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POS</RootNamespace>
+    <AssemblyName>POS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Guna.UI">
+      <HintPath>F:\Guna.UI-Framework-Lib-master (2)\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BestProductReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BestProductReportViewer.Designer.cs">
+      <DependentUpon>BestProductReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportBestProduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportBestProduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOrderItem1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOrderItem1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportProduct1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportProduct1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSales1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSales1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DailyStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyStats.Designer.cs">
+      <DependentUpon>DailyStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteDetails.Designer.cs">
+      <DependentUpon>deleteDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryBillPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeliveryBillPrint.Designer.cs">
+      <DependentUpon>DeliveryBillPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeDetails.Designer.cs">
+      <DependentUpon>EmployeeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeRegistration.Designer.cs">
+      <DependentUpon>EmployeeRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kichen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kichen.Designer.cs">
+      <DependentUpon>Kichen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingPage.Designer.cs">
+      <DependentUpon>LoadingPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main cashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main cashier.Designer.cs">
+      <DependentUpon>main cashier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerMain.Designer.cs">
+      <DependentUpon>ManagerMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineDelivery.Designer.cs">
+      <DependentUpon>OnlineDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItemReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderItemReportViewer.Designer.cs">
+      <DependentUpon>OrderItemReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="orders history.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="orders history.Designer.cs">
+      <DependentUpon>orders history.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductReportViewer.Designer.cs">
+      <DependentUpon>ProductReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportsNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsNew.Designer.cs">
+      <DependentUpon>ReportsNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\billreport.cs" />
+    <Compile Include="Reports\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Print Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Print Bill.Designer.cs">
+      <DependentUpon>Print Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesReportViewer.Designer.cs">
+      <DependentUpon>SalesReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="statsOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="statsOrders.Designer.cs">
+      <DependentUpon>statsOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="statsRevenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="statsRevenue.Designer.cs">
+      <DependentUpon>statsRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateDetails.Designer.cs">
+      <DependentUpon>updateDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewDetails.Designer.cs">
+      <DependentUpon>viewDetails.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BestProductReportViewer.resx">
+      <DependentUpon>BestProductReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportBestProduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportBestProduct.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOrderItem1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOrderItem1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportProduct1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportProduct1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSales1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSales1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyStats.resx">
+      <DependentUpon>DailyStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteDetails.resx">
+      <DependentUpon>deleteDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveryBillPrint.resx">
+      <DependentUpon>DeliveryBillPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeDetails.resx">
+      <DependentUpon>EmployeeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeRegistration.resx">
+      <DependentUpon>EmployeeRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kichen.resx">
+      <DependentUpon>Kichen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingPage.resx">
+      <DependentUpon>LoadingPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main cashier.resx">
+      <DependentUpon>main cashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerMain.resx">
+      <DependentUpon>ManagerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineDelivery.resx">
+      <DependentUpon>OnlineDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderItemReportViewer.resx">
+      <DependentUpon>OrderItemReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="orders history.resx">
+      <DependentUpon>orders history.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductReportViewer.resx">
+      <DependentUpon>ProductReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReportsNew.resx">
+      <DependentUpon>ReportsNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Print Bill.resx">
+      <DependentUpon>Print Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="SalesReportViewer.resx">
+      <DependentUpon>SalesReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="statsOrders.resx">
+      <DependentUpon>statsOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="statsRevenue.resx">
+      <DependentUpon>statsRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateDetails.resx">
+      <DependentUpon>updateDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewDetails.resx">
+      <DependentUpon>viewDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\icons8-soda-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-soda-100 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temperature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\humidity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PZ09.png" />
+    <None Include="Resources\PZ10.png" />
+    <None Include="Resources\AP01.png" />
+    <None Include="Resources\AP02.png" />
+    <None Include="Resources\AP03.png" />
+    <None Include="Resources\AP04.png" />
+    <None Include="Resources\DS01.png" />
+    <None Include="Resources\DS02.png" />
+    <None Include="Resources\BV01.png" />
+    <None Include="Resources\BV02.png" />
+    <None Include="Resources\BV03.png" />
+    <None Include="Resources\BV04.png" />
+    <None Include="Resources\YbIni.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\printer %281%29.png" />
+    <None Include="Resources\WhatsApp Image 2023-07-23 at 01.49.32dsdfs.jpg" />
+    <None Include="Resources\WhatsApp Image 2023-07-23 at 01.49.32.jpg" />
+    <None Include="Resources\WhatsApp Image 2023-07-23 at 01.49.321.jpg" />
+    <None Include="Resources\PZ03.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\switch %281%291.png" />
+    <None Include="Resources\,mj.,.jpg" />
+    <None Include="Resources\Pizza Master Logo1.png" />
+    <None Include="Resources\switch %281%292.png" />
+    <None Include="Resources\switch %282%291.png" />
+    <None Include="Resources\logout1.png" />
+    <None Include="Resources\logout %281%29.png" />
+    <None Include="Resources\,mj.,1.jpg" />
+    <None Include="Resources\notification_sound.wav" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
